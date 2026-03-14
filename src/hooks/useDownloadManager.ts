@@ -20,6 +20,13 @@ const LIBRARY_DIR = 'HexanimeLibrary';
 const APP_VERSION = '1.3.1';
 const MIN_VALID_FILE_SIZE = 1 * 1024 * 1024; // 1MB
 
+// ── Debug Logger ──
+function hexadevLog(message: string) {
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(new CustomEvent('hexadev-log', { detail: message }));
+  }
+}
+
 // ── GDrive API v3 URL ──
 function getGDriveUrl(fileId: string): string {
   const apiKey = import.meta.env.VITE_GDRIVE_API_KEY || '';
@@ -30,8 +37,10 @@ function getGDriveUrl(fileId: string): string {
 function assertApiKey(): boolean {
   const key = import.meta.env.VITE_GDRIVE_API_KEY;
   if (!key) {
-    console.error('[DL] ❌ FATAL: VITE_GDRIVE_API_KEY is missing!');
-    alert('Config Error: GDrive API Key is missing.\n\nSet VITE_GDRIVE_API_KEY in .env');
+    const msg = 'Config Error: GDrive API Key is missing.\nSet VITE_GDRIVE_API_KEY in .env';
+    console.error(`[DL] ❌ FATAL: ${msg}`);
+    hexadevLog(msg);
+    alert(msg);
     return false;
   }
   return true;
@@ -52,11 +61,15 @@ async function requestStoragePermission(): Promise<boolean> {
       return true;
     }
 
-    console.error(`[Perm] ❌ Denied (${result.publicStorage})`);
+    const msg = `System Denied: READ_MEDIA_VIDEO / READ_EXTERNAL_STORAGE.\nAndroid API Level: Android 13+ (or legacy).\nStatus: ${result.publicStorage}`;
+    console.error(`[Perm] ❌ ${msg}`);
     console.error('[Perm] User harus enable: Settings → Apps → Hexanime → Permissions');
+    hexadevLog(msg);
     return false;
   } catch (err) {
-    console.error('[Perm] ❌ Request failed:', err);
+    const msg = err instanceof Error ? err.message : String(err);
+    console.error('[Perm] ❌ Request failed:', msg);
+    hexadevLog(`Permission Request Failed: ${msg}`);
     return false;
   }
 }
@@ -78,6 +91,7 @@ async function ensureDirectory(subPath?: string): Promise<void> {
     const msg = err instanceof Error ? err.message : String(err);
     if (!msg.includes('exists') && !msg.includes('EEXIST')) {
       console.warn(`[DL] mkdir warning: ${msg}`);
+      hexadevLog(`Directory Ensure Warning: ${msg}`);
     }
   }
 }
@@ -192,12 +206,11 @@ export function useDownloadManager({ setStatus }: UseDownloadManagerProps) {
           const contentLength = Number(headResp.headers.get('content-length') || 0);
           console.log(`[DL] ✓ HEAD OK | ${(contentLength / 1024 / 1024).toFixed(1)}MB | ${contentType}`);
         } catch (headErr) {
-          // If it's our own thrown error, re-throw
           if (headErr instanceof Error && headErr.message.startsWith('API Error')) {
             throw headErr;
           }
-          // Network error on HEAD — try download anyway (some servers block HEAD)
           console.warn('[DL] HEAD request failed, trying download anyway:', headErr);
+          // Don't hexadevLog here yet, it might still work during downloadFile
         }
 
         // ── Native streaming download ──
@@ -260,6 +273,8 @@ export function useDownloadManager({ setStatus }: UseDownloadManagerProps) {
     } catch (err) {
       const errorMsg = err instanceof Error ? err.message : String(err);
       console.error(`[DL] ❌ Failed: ${path} — ${errorMsg}`);
+      
+      hexadevLog(`Download Failed (${ep}):\n${errorMsg}`);
 
       updateQueue(prev => prev.map(i =>
         i.seriesId === seriesId && i.ep === ep
@@ -409,7 +424,9 @@ export function useDownloadManager({ setStatus }: UseDownloadManagerProps) {
 
       console.log(`[Audit] ✅ Done. ${verified} OK, ${reset} reset, ${deleted} deleted.`);
     } catch (err) {
-      console.error('[Audit] ❌ Failed:', err);
+      const msg = err instanceof Error ? err.message : String(err);
+      console.error('[Audit] ❌ Failed:', msg);
+      hexadevLog(`Storage Audit Failed: ${msg}`);
     }
   }, [setStatus]);
 

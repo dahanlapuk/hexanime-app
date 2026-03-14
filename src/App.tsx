@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import DetailPage from './pages/DetailPage';
 import PlayerPage from './pages/PlayerPage';
+import DebugConsole from './components/DebugConsole';
 
 export default function App() {
   const { library, loading } = useLibrary();
@@ -43,6 +44,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
+      <DebugConsole />
       <Routes>
         <Route path="/player/:seriesId/:ep" element={
           <PlayerPage
