@@ -16,7 +16,9 @@ interface Props {
   downloadManager: ReturnType<typeof useDownloadManager>;
 }
 
-export default function DetailPage({ library, statusMap, order, getStatus, cycleStatus, setBatchStatus, downloadManager }: Props) {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
+export default function DetailPage({ library, statusMap, order: _order, getStatus, cycleStatus, setBatchStatus, downloadManager }: Props) {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const series = library.find(s => s.id === id);

@@ -11,7 +11,7 @@ import { useState, useCallback, useRef } from 'react';
 import type { Episode, DownloadQueueItem, EpisodeStatus } from '../types';
 
 // Detect Capacitor environment
-const isCapacitor = typeof (window as Record<string, unknown>).Capacitor !== 'undefined';
+const isCapacitor = typeof (window as unknown as Record<string, unknown>).Capacitor !== 'undefined';
 
 // GDrive download URL builder
 const getGDriveUrl = (fileId: string) =>
@@ -82,7 +82,7 @@ export function useDownloadManager({ setStatus }: UseDownloadManagerProps) {
         return;
       }
 
-      const { seriesId, ep, file_id, path, filename } = nextItem;
+      const { seriesId, ep, file_id, path } = nextItem;
 
       // Update queue item status
       setQueue(prev => prev.map(i =>
@@ -239,9 +239,7 @@ export function useDownloadManager({ setStatus }: UseDownloadManagerProps) {
           directory: Directory.Documents,
         });
         // Convert Capacitor URI to web-viewable URL
-        return (window as Record<string, unknown>).Capacitor
-          ? (result.uri) // Capacitor handles this natively
-          : result.uri;
+        return result.uri;
       } catch {
         return '';
       }

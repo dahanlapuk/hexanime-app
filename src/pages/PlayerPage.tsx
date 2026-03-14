@@ -12,7 +12,7 @@ interface Props {
   getPlaybackUrl: (episode: Episode) => Promise<string>;
 }
 
-export default function PlayerPage({ library, getStatus, setStatus, getTime, saveTime, getPlaybackUrl }: Props) {
+export default function PlayerPage({ library, getStatus: _getStatus, setStatus, getTime, saveTime, getPlaybackUrl }: Props) {
   const { seriesId, ep } = useParams<{ seriesId: string; ep: string }>();
   const navigate = useNavigate();
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -22,8 +22,8 @@ export default function PlayerPage({ library, getStatus, setStatus, getTime, sav
   const [showOverlay, setShowOverlay] = useState(true);
   const [showUpNext, setShowUpNext] = useState(false);
   const [videoSrc, setVideoSrc] = useState('');
-  const overlayTimer = useRef<ReturnType<typeof setTimeout>>();
-  const saveInterval = useRef<ReturnType<typeof setInterval>>();
+  const overlayTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
+  const saveInterval = useRef<ReturnType<typeof setInterval>>(undefined);
 
   const series = library.find(s => s.id === seriesId);
   const meta = seriesId ? SERIES_META[seriesId] : undefined;
