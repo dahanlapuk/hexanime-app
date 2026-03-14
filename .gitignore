@@ -1,0 +1,65 @@
+# ── Dependencies ──
+node_modules/
+.pnp/
+.pnp.js
+
+# ── Build Output ──
+dist/
+dist-ssr/
+*.local
+
+# ── Environment Variables (NEVER commit secrets) ──
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ── Vite ──
+vite.config.ts.timestamp-*
+
+# ── IDE / Editor ──
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ── Debug Logs ──
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ── TypeScript ──
+*.tsbuildinfo
+
+# ── Testing ──
+coverage/
+
+# ── Capacitor — Android ──
+android/.gradle/
+android/build/
+android/app/build/
+android/app/release/
+android/local.properties
+android/.idea/
+android/*.iml
+android/app/*.iml
+android/capacitor-cordova-android-plugins/build/
+android/captures/
+
+# ── Capacitor — iOS (future-proof) ──
+ios/App/Pods/
+ios/App/DerivedData/
+ios/App/build/
+
+# ── Misc ──
+*.apk
+*.aab
+*.keystore
+*.jks
+merge_ids.py
+hexanime_file_ids.csv

@@ -1,0 +1,1366 @@
+[
+  {
+    "id": "01",
+    "folder_name": "01 - Bakemonogatari",
+    "title": "Bakemonogatari",
+    "episodes": [
+      {
+        "ep": "01",
+        "filename": "Bakemonogatari - 01.mp4",
+        "path": "01 - Bakemonogatari/Bakemonogatari - 01.mp4",
+        "duration_min": 25,
+        "status": "not_downloaded",
+        "file_id": "1su_rlHnz-MJti8waRn_j6w_snyVS-vZi",
+        "chrono_idx": 11,
+        "release_idx": 1,
+        "split_group": null
+      },
+      {
+        "ep": "02",
+        "filename": "Bakemonogatari - 02.mp4",
+        "path": "01 - Bakemonogatari/Bakemonogatari - 02.mp4",
+        "duration_min": 25,
+        "status": "not_downloaded",
+        "file_id": "1dksXD5ND-oipHV5-P3GIXcKQU_aCeZMv",
+        "chrono_idx": 12,
+        "release_idx": 2,
+        "split_group": null
+      },
+      {
+        "ep": "03",
+        "filename": "Bakemonogatari - 03.mp4",
+        "path": "01 - Bakemonogatari/Bakemonogatari - 03.mp4",
+        "duration_min": 25,
+        "status": "not_downloaded",
+        "file_id": "1DF0yGR558lCRgKAbV81J1atAXA1sISdK",
+        "chrono_idx": 13,
+        "release_idx": 3,
+        "split_group": null
+      },
+      {
+        "ep": "04",
+        "filename": "Bakemonogatari - 04.mp4",
+        "path": "01 - Bakemonogatari/Bakemonogatari - 04.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1h8QGcTnWB2Xl_kEkYWzrfdr7esStwWI0",
+        "chrono_idx": 14,
+        "release_idx": 4,
+        "split_group": null
+      },
+      {
+        "ep": "05",
+        "filename": "Bakemonogatari - 05.mp4",
+        "path": "01 - Bakemonogatari/Bakemonogatari - 05.mp4",
+        "duration_min": 26,
+        "status": "not_downloaded",
+        "file_id": "1Y20nPJayhwp6ElaQik_0Rf_uuaiNYRsW",
+        "chrono_idx": 15,
+        "release_idx": 5,
+        "split_group": null
+      },
+      {
+        "ep": "06",
+        "filename": "Bakemonogatari - 06.mp4",
+        "path": "01 - Bakemonogatari/Bakemonogatari - 06.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1-k7dOLSXXN4cYA-76Gkt5FSl48YyCFb9",
+        "chrono_idx": 16,
+        "release_idx": 6,
+        "split_group": null
+      },
+      {
+        "ep": "07",
+        "filename": "Bakemonogatari - 07.mp4",
+        "path": "01 - Bakemonogatari/Bakemonogatari - 07.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1kJOqAUPOEIit4BhfrT0zJgaxW8K5lwI1",
+        "chrono_idx": 17,
+        "release_idx": 7,
+        "split_group": null
+      },
+      {
+        "ep": "08",
+        "filename": "Bakemonogatari - 08.mp4",
+        "path": "01 - Bakemonogatari/Bakemonogatari - 08.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1iNIOIdIsfAytUviYeJ6XJFzztQyak2Dn",
+        "chrono_idx": 18,
+        "release_idx": 8,
+        "split_group": null
+      },
+      {
+        "ep": "09",
+        "filename": "Bakemonogatari - 09.mp4",
+        "path": "01 - Bakemonogatari/Bakemonogatari - 09.mp4",
+        "duration_min": 26,
+        "status": "not_downloaded",
+        "file_id": "1WppKZPZYWSzsMHT-8fcXpv052w9wVzYw",
+        "chrono_idx": 19,
+        "release_idx": 9,
+        "split_group": null
+      },
+      {
+        "ep": "10",
+        "filename": "Bakemonogatari - 10.mp4",
+        "path": "01 - Bakemonogatari/Bakemonogatari - 10.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1xXAxYoYOoYSQLSM-LcXbr8xMVA7rwma3",
+        "chrono_idx": 20,
+        "release_idx": 10,
+        "split_group": null
+      },
+      {
+        "ep": "11",
+        "filename": "Bakemonogatari - 11.mp4",
+        "path": "01 - Bakemonogatari/Bakemonogatari - 11.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1ZolNojUXdEG9AAurKHEbUx316Ifwob2u",
+        "chrono_idx": 21,
+        "release_idx": 11,
+        "split_group": null
+      },
+      {
+        "ep": "12",
+        "filename": "Bakemonogatari - 12.mp4",
+        "path": "01 - Bakemonogatari/Bakemonogatari - 12.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1zVbkLH3a1u4bjVzCEZ4ByLFF9skYGUcv",
+        "chrono_idx": 22,
+        "release_idx": 12,
+        "split_group": null
+      },
+      {
+        "ep": "13",
+        "filename": "Bakemonogatari - 13.mp4",
+        "path": "01 - Bakemonogatari/Bakemonogatari - 13.mp4",
+        "duration_min": 26,
+        "status": "not_downloaded",
+        "file_id": "1w-N53epo90Jl6FWubCCXJVta1f1MgePf",
+        "chrono_idx": 23,
+        "release_idx": 13,
+        "split_group": null
+      },
+      {
+        "ep": "14",
+        "filename": "Bakemonogatari - 14.mp4",
+        "path": "01 - Bakemonogatari/Bakemonogatari - 14.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "11PcSNbpgPwnICtFiTJ4bIE4lmfSGNTJj",
+        "chrono_idx": 24,
+        "release_idx": 14,
+        "split_group": null
+      },
+      {
+        "ep": "15",
+        "filename": "Bakemonogatari - 15.mp4",
+        "path": "01 - Bakemonogatari/Bakemonogatari - 15.mp4",
+        "duration_min": 25,
+        "status": "not_downloaded",
+        "file_id": "1vQP6hBk2-KL7n0lRhZIDGbo6Qch1Y1li",
+        "chrono_idx": 25,
+        "release_idx": 15,
+        "split_group": null
+      }
+    ]
+  },
+  {
+    "id": "02",
+    "folder_name": "02 - Kizumonogatari",
+    "title": "Kizumonogatari",
+    "episodes": [
+      {
+        "ep": "Reiketsu-hen",
+        "filename": "Kizumonogatari III - Reiketsu-hen.mkv",
+        "path": "02 - Kizumonogatari/Kizumonogatari III - Reiketsu-hen.mkv",
+        "duration_min": 82,
+        "status": "not_downloaded",
+        "file_id": "1r4mJRpv7nteKGG9U8_3tzwQsNfc1aXL9",
+        "chrono_idx": 6,
+        "release_idx": 106,
+        "split_group": null
+      },
+      {
+        "ep": "Nekketsu-hen",
+        "filename": "Kizumonogatari II - Nekketsu-hen.mkv",
+        "path": "02 - Kizumonogatari/Kizumonogatari II - Nekketsu-hen.mkv",
+        "duration_min": 68,
+        "status": "not_downloaded",
+        "file_id": "11WVhcJh7WqSgm4IiWvxeK7mTr05Az8Xg",
+        "chrono_idx": 5,
+        "release_idx": 105,
+        "split_group": null
+      },
+      {
+        "ep": "Tekketsu-hen",
+        "filename": "Kizumonogatari I - Tekketsu-hen.mkv",
+        "path": "02 - Kizumonogatari/Kizumonogatari I - Tekketsu-hen.mkv",
+        "duration_min": 63,
+        "status": "not_downloaded",
+        "file_id": "1pwVBjf4YJdcFCuCkWyZ53WlmuuoBbqPh",
+        "chrono_idx": 3,
+        "release_idx": 103,
+        "split_group": null
+      }
+    ]
+  },
+  {
+    "id": "03",
+    "folder_name": "03 - Nisemonogatari",
+    "title": "Nisemonogatari",
+    "episodes": [
+      {
+        "ep": "01",
+        "filename": "Nisemonogatari - 01.mp4",
+        "path": "03 - Nisemonogatari/Nisemonogatari - 01.mp4",
+        "duration_min": 23,
+        "status": "not_downloaded",
+        "file_id": "1FzKepwx0ihPJSxuDuYZmEsxNNhD96d9o",
+        "chrono_idx": 26,
+        "release_idx": 16,
+        "split_group": null
+      },
+      {
+        "ep": "02",
+        "filename": "Nisemonogatari - 02.mp4",
+        "path": "03 - Nisemonogatari/Nisemonogatari - 02.mp4",
+        "duration_min": 21,
+        "status": "not_downloaded",
+        "file_id": "1pD8yxv4U23Wpmy2omHaTnPxjyo5lCpeB",
+        "chrono_idx": 27,
+        "release_idx": 17,
+        "split_group": null
+      },
+      {
+        "ep": "03",
+        "filename": "Nisemonogatari - 03.mp4",
+        "path": "03 - Nisemonogatari/Nisemonogatari - 03.mp4",
+        "duration_min": 21,
+        "status": "not_downloaded",
+        "file_id": "12swms4n3lkP8f7JB93LpU0pWdqghbc-P",
+        "chrono_idx": 28,
+        "release_idx": 18,
+        "split_group": null
+      },
+      {
+        "ep": "04",
+        "filename": "Nisemonogatari - 04.mp4",
+        "path": "03 - Nisemonogatari/Nisemonogatari - 04.mp4",
+        "duration_min": 23,
+        "status": "not_downloaded",
+        "file_id": "1WXWZLms-N5hQmGac5_6EmfLfLZEFnTjT",
+        "chrono_idx": 29,
+        "release_idx": 19,
+        "split_group": null
+      },
+      {
+        "ep": "05",
+        "filename": "Nisemonogatari - 05.mp4",
+        "path": "03 - Nisemonogatari/Nisemonogatari - 05.mp4",
+        "duration_min": 22,
+        "status": "not_downloaded",
+        "file_id": "1ByZO_SmxZAadnZk0Vq2GgtkwWd7g7KAf",
+        "chrono_idx": 30,
+        "release_idx": 20,
+        "split_group": null
+      },
+      {
+        "ep": "06",
+        "filename": "Nisemonogatari - 06.mp4",
+        "path": "03 - Nisemonogatari/Nisemonogatari - 06.mp4",
+        "duration_min": 21,
+        "status": "not_downloaded",
+        "file_id": "1kxOmVJBecIMOGNz-npJyafbsv4WxnEAP",
+        "chrono_idx": 31,
+        "release_idx": 21,
+        "split_group": null
+      },
+      {
+        "ep": "07",
+        "filename": "Nisemonogatari - 07.mp4",
+        "path": "03 - Nisemonogatari/Nisemonogatari - 07.mp4",
+        "duration_min": 25,
+        "status": "not_downloaded",
+        "file_id": "1YVrxGpslt2tpo4udsdLi8GyrLHcO29jN",
+        "chrono_idx": 32,
+        "release_idx": 22,
+        "split_group": null
+      },
+      {
+        "ep": "08",
+        "filename": "Nisemonogatari - 08.mp4",
+        "path": "03 - Nisemonogatari/Nisemonogatari - 08.mp4",
+        "duration_min": 22,
+        "status": "not_downloaded",
+        "file_id": "1HbGr8EhbuT2W_7Ykddo7sEfyiaHfFPyO",
+        "chrono_idx": 33,
+        "release_idx": 23,
+        "split_group": null
+      },
+      {
+        "ep": "09",
+        "filename": "Nisemonogatari - 09.mp4",
+        "path": "03 - Nisemonogatari/Nisemonogatari - 09.mp4",
+        "duration_min": 21,
+        "status": "not_downloaded",
+        "file_id": "13fWgAzWD05QFYeRTM31e1mA9CNSs0rM_",
+        "chrono_idx": 34,
+        "release_idx": 24,
+        "split_group": null
+      },
+      {
+        "ep": "10",
+        "filename": "Nisemonogatari - 10.mp4",
+        "path": "03 - Nisemonogatari/Nisemonogatari - 10.mp4",
+        "duration_min": 21,
+        "status": "not_downloaded",
+        "file_id": "1k5VjIPAd5kZV8g-OtESF-fwN9uMHd8sb",
+        "chrono_idx": 35,
+        "release_idx": 25,
+        "split_group": null
+      },
+      {
+        "ep": "11",
+        "filename": "Nisemonogatari - 11.mp4",
+        "path": "03 - Nisemonogatari/Nisemonogatari - 11.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1BPOvNhiGZ22Bh6WVIUir4bbAtuF4i4YX",
+        "chrono_idx": 36,
+        "release_idx": 26,
+        "split_group": null
+      }
+    ]
+  },
+  {
+    "id": "04",
+    "folder_name": "04 - Nekomonogatari Kuro",
+    "title": "Nekomonogatari Kuro",
+    "episodes": [
+      {
+        "ep": "01",
+        "filename": "Nekomonogatari Kuro - 01.mp4",
+        "path": "04 - Nekomonogatari Kuro/Nekomonogatari Kuro - 01.mp4",
+        "duration_min": 26,
+        "status": "not_downloaded",
+        "file_id": "1K0xIQ2tOPhqiNzeFqPZhQZ3VBSZp0BCG",
+        "chrono_idx": 7,
+        "release_idx": 27,
+        "split_group": null
+      },
+      {
+        "ep": "02",
+        "filename": "Nekomonogatari Kuro - 02.mp4",
+        "path": "04 - Nekomonogatari Kuro/Nekomonogatari Kuro - 02.mp4",
+        "duration_min": 23,
+        "status": "not_downloaded",
+        "file_id": "1uzVhSpWzW8wwyMjdjcADR4LE5JNwd-rh",
+        "chrono_idx": 8,
+        "release_idx": 28,
+        "split_group": null
+      },
+      {
+        "ep": "03",
+        "filename": "Nekomonogatari Kuro - 03.mp4",
+        "path": "04 - Nekomonogatari Kuro/Nekomonogatari Kuro - 03.mp4",
+        "duration_min": 26,
+        "status": "not_downloaded",
+        "file_id": "1l2UsBZx48wjHNd7DlmmmNZfKuT5OPZy5",
+        "chrono_idx": 9,
+        "release_idx": 29,
+        "split_group": null
+      },
+      {
+        "ep": "04",
+        "filename": "Nekomonogatari Kuro - 04.mp4",
+        "path": "04 - Nekomonogatari Kuro/Nekomonogatari Kuro - 04.mp4",
+        "duration_min": 31,
+        "status": "not_downloaded",
+        "file_id": "1eBSH7oPyZuYZknCup-Gw2leJjPk4Q929",
+        "chrono_idx": 10,
+        "release_idx": 30,
+        "split_group": null
+      }
+    ]
+  },
+  {
+    "id": "05",
+    "folder_name": "05 - Monogatari Series Second Season",
+    "title": "Monogatari Series Second Season",
+    "episodes": [
+      {
+        "ep": "01",
+        "filename": "Hanamonogatari - 01.mp4",
+        "path": "05 - Monogatari Series Second Season/Hanamonogatari - 01.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1a1qLjrVua2YxzJ_aR2H1orakmo53mbaK",
+        "chrono_idx": 59,
+        "release_idx": 53,
+        "split_group": null
+      },
+      {
+        "ep": "02",
+        "filename": "Hanamonogatari - 02.mp4",
+        "path": "05 - Monogatari Series Second Season/Hanamonogatari - 02.mp4",
+        "duration_min": 22,
+        "status": "not_downloaded",
+        "file_id": "1BhoFEU_sm5HAj0TR985pmO7mMWhThdMi",
+        "chrono_idx": 60,
+        "release_idx": 54,
+        "split_group": null
+      },
+      {
+        "ep": "03",
+        "filename": "Hanamonogatari - 03.mp4",
+        "path": "05 - Monogatari Series Second Season/Hanamonogatari - 03.mp4",
+        "duration_min": 21,
+        "status": "not_downloaded",
+        "file_id": "1QBtSSsdCCUQ-WlDD49aByNxMjCfW_L4y",
+        "chrono_idx": 61,
+        "release_idx": 55,
+        "split_group": null
+      },
+      {
+        "ep": "04",
+        "filename": "Hanamonogatari - 04.mp4",
+        "path": "05 - Monogatari Series Second Season/Hanamonogatari - 04.mp4",
+        "duration_min": 22,
+        "status": "not_downloaded",
+        "file_id": "13J2ju7SJUleKw6p3AI9603-F4uhZj23W",
+        "chrono_idx": 62,
+        "release_idx": 56,
+        "split_group": null
+      },
+      {
+        "ep": "05",
+        "filename": "Hanamonogatari - 05.mp4",
+        "path": "05 - Monogatari Series Second Season/Hanamonogatari - 05.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1tjctNqi0Yw3yiw0aSRbaI1Qb_MLMr7oa",
+        "chrono_idx": 63,
+        "release_idx": 57,
+        "split_group": null
+      },
+      {
+        "ep": "01",
+        "filename": "Kabukimonogatari - 01.mp4",
+        "path": "05 - Monogatari Series Second Season/Kabukimonogatari - 01.mp4",
+        "duration_min": 26,
+        "status": "not_downloaded",
+        "file_id": "13HaDtZYBEVLa4BAWwCa5_gUcznwOxYeb",
+        "chrono_idx": 59,
+        "release_idx": 53,
+        "split_group": null
+      },
+      {
+        "ep": "02",
+        "filename": "Kabukimonogatari - 02.mp4",
+        "path": "05 - Monogatari Series Second Season/Kabukimonogatari - 02.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1pwwc_nHjkRUoXTHZZyPbtYKknZ-7ewRR",
+        "chrono_idx": 60,
+        "release_idx": 54,
+        "split_group": null
+      },
+      {
+        "ep": "03",
+        "filename": "Kabukimonogatari - 03.mp4",
+        "path": "05 - Monogatari Series Second Season/Kabukimonogatari - 03.mp4",
+        "duration_min": 25,
+        "status": "not_downloaded",
+        "file_id": "1Rk8Zd1uOxUuQ41OR3IwcXHuyYUJKpmuW",
+        "chrono_idx": 61,
+        "release_idx": 55,
+        "split_group": null
+      },
+      {
+        "ep": "04",
+        "filename": "Kabukimonogatari - 04.mp4",
+        "path": "05 - Monogatari Series Second Season/Kabukimonogatari - 04.mp4",
+        "duration_min": 26,
+        "status": "not_downloaded",
+        "file_id": "1IxBOCdA4Zwxd0G5xnUmPPxqYC3I3Zikp",
+        "chrono_idx": 62,
+        "release_idx": 56,
+        "split_group": null
+      },
+      {
+        "ep": "01",
+        "filename": "Koimonogatari - 01.mp4",
+        "path": "05 - Monogatari Series Second Season/Koimonogatari - 01.mp4",
+        "duration_min": 26,
+        "status": "not_downloaded",
+        "file_id": "1rCww0_Pb_auTZFpfXumoROlPhi8hRLwb",
+        "chrono_idx": 59,
+        "release_idx": 53,
+        "split_group": null
+      },
+      {
+        "ep": "02",
+        "filename": "Koimonogatari - 02.mp4",
+        "path": "05 - Monogatari Series Second Season/Koimonogatari - 02.mp4",
+        "duration_min": 26,
+        "status": "not_downloaded",
+        "file_id": "18tf64bxSeL4LYLXGFO3xCnOfR-u1v-jd",
+        "chrono_idx": 60,
+        "release_idx": 54,
+        "split_group": null
+      },
+      {
+        "ep": "03",
+        "filename": "Koimonogatari - 03.mp4",
+        "path": "05 - Monogatari Series Second Season/Koimonogatari - 03.mp4",
+        "duration_min": 25,
+        "status": "not_downloaded",
+        "file_id": "15vKwZ7e38ed7amE8XHUO6IzncZ4CGMmp",
+        "chrono_idx": 61,
+        "release_idx": 55,
+        "split_group": null
+      },
+      {
+        "ep": "04",
+        "filename": "Koimonogatari - 04.mp4",
+        "path": "05 - Monogatari Series Second Season/Koimonogatari - 04.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1pnhv-7sQg47C7CYMRwgHwjdr3v6VnKvd",
+        "chrono_idx": 62,
+        "release_idx": 56,
+        "split_group": null
+      },
+      {
+        "ep": "05",
+        "filename": "Koimonogatari - 05.mp4",
+        "path": "05 - Monogatari Series Second Season/Koimonogatari - 05.mp4",
+        "duration_min": 25,
+        "status": "not_downloaded",
+        "file_id": "1MJZ_cWmcen2oYSFzyi4cfxSvwbtawVNO",
+        "chrono_idx": 63,
+        "release_idx": 57,
+        "split_group": null
+      },
+      {
+        "ep": "06",
+        "filename": "Koimonogatari - 06.mp4",
+        "path": "05 - Monogatari Series Second Season/Koimonogatari - 06.mp4",
+        "duration_min": 26,
+        "status": "not_downloaded",
+        "file_id": "1-Lwd2ehz2LArFwctkob6y1386kGAdfwf",
+        "chrono_idx": 64,
+        "release_idx": 58,
+        "split_group": null
+      },
+      {
+        "ep": "01",
+        "filename": "Nekomonogatari Shiro - 01.mp4",
+        "path": "05 - Monogatari Series Second Season/Nekomonogatari Shiro - 01.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "11I_awO5AexbMhSiAkoiLl0JFZg5H5fVs",
+        "chrono_idx": 59,
+        "release_idx": 53,
+        "split_group": null
+      },
+      {
+        "ep": "02",
+        "filename": "Nekomonogatari Shiro - 02.mp4",
+        "path": "05 - Monogatari Series Second Season/Nekomonogatari Shiro - 02.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1PPHAz4HczWKNhQldH0FcztxMW3HTXFUG",
+        "chrono_idx": 60,
+        "release_idx": 54,
+        "split_group": null
+      },
+      {
+        "ep": "03",
+        "filename": "Nekomonogatari Shiro - 03.mp4",
+        "path": "05 - Monogatari Series Second Season/Nekomonogatari Shiro - 03.mp4",
+        "duration_min": 26,
+        "status": "not_downloaded",
+        "file_id": "1JUn6Ld6qZ-iGzDFJY3Wi-0Y2_MVYAfa3",
+        "chrono_idx": 61,
+        "release_idx": 55,
+        "split_group": null
+      },
+      {
+        "ep": "04",
+        "filename": "Nekomonogatari Shiro - 04.mp4",
+        "path": "05 - Monogatari Series Second Season/Nekomonogatari Shiro - 04.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1ilqTWYy7oGWt9dSPe-SxvWSst2bxBcgW",
+        "chrono_idx": 62,
+        "release_idx": 56,
+        "split_group": null
+      },
+      {
+        "ep": "05",
+        "filename": "Nekomonogatari Shiro - 05.mp4",
+        "path": "05 - Monogatari Series Second Season/Nekomonogatari Shiro - 05.mp4",
+        "duration_min": 26,
+        "status": "not_downloaded",
+        "file_id": "1GcVbmirWXvahJrvc4eU-7l6MkqIiLwpv",
+        "chrono_idx": 63,
+        "release_idx": 57,
+        "split_group": null
+      },
+      {
+        "ep": "01",
+        "filename": "Onimonogatari - 01.mp4",
+        "path": "05 - Monogatari Series Second Season/Onimonogatari - 01.mp4",
+        "duration_min": 26,
+        "status": "not_downloaded",
+        "file_id": "1G1RgRYuleXJL0ABHlZMVeXCgkPz02R1G",
+        "chrono_idx": 59,
+        "release_idx": 53,
+        "split_group": null
+      },
+      {
+        "ep": "02",
+        "filename": "Onimonogatari - 02.mp4",
+        "path": "05 - Monogatari Series Second Season/Onimonogatari - 02.mp4",
+        "duration_min": 26,
+        "status": "not_downloaded",
+        "file_id": "1c5jDTnVQR-LNdTGtZH8gN2JISNRHv5BT",
+        "chrono_idx": 60,
+        "release_idx": 54,
+        "split_group": null
+      },
+      {
+        "ep": "03",
+        "filename": "Onimonogatari - 03.mp4",
+        "path": "05 - Monogatari Series Second Season/Onimonogatari - 03.mp4",
+        "duration_min": 26,
+        "status": "not_downloaded",
+        "file_id": "1Ftv77pLT2RRIbyYlrCdrDGu6LVCbpV1n",
+        "chrono_idx": 61,
+        "release_idx": 55,
+        "split_group": null
+      },
+      {
+        "ep": "04",
+        "filename": "Onimonogatari - 04.mp4",
+        "path": "05 - Monogatari Series Second Season/Onimonogatari - 04.mp4",
+        "duration_min": 28,
+        "status": "not_downloaded",
+        "file_id": "1GHqZrtK4pt9CZd-6W3fJrB3HJB8CTrMl",
+        "chrono_idx": 62,
+        "release_idx": 56,
+        "split_group": null
+      },
+      {
+        "ep": "01",
+        "filename": "Otorimonogatari - 01.mp4",
+        "path": "05 - Monogatari Series Second Season/Otorimonogatari - 01.mp4",
+        "duration_min": 25,
+        "status": "not_downloaded",
+        "file_id": "1N-t8ZClYGvwhqcCpGppRg8GvyzlTe20t",
+        "chrono_idx": 59,
+        "release_idx": 53,
+        "split_group": null
+      },
+      {
+        "ep": "02",
+        "filename": "Otorimonogatari - 02.mp4",
+        "path": "05 - Monogatari Series Second Season/Otorimonogatari - 02.mp4",
+        "duration_min": 26,
+        "status": "not_downloaded",
+        "file_id": "1zs1UJ5-EvnGXOXmTlVqHO2a6bk-6iVQz",
+        "chrono_idx": 60,
+        "release_idx": 54,
+        "split_group": null
+      },
+      {
+        "ep": "03",
+        "filename": "Otorimonogatari - 03.mp4",
+        "path": "05 - Monogatari Series Second Season/Otorimonogatari - 03.mp4",
+        "duration_min": 25,
+        "status": "not_downloaded",
+        "file_id": "1gbH3pqJAAUWuACgDSV2IT15CJlxOOZKb",
+        "chrono_idx": 61,
+        "release_idx": 55,
+        "split_group": null
+      },
+      {
+        "ep": "04",
+        "filename": "Otorimonogatari - 04.mp4",
+        "path": "05 - Monogatari Series Second Season/Otorimonogatari - 04.mp4",
+        "duration_min": 26,
+        "status": "not_downloaded",
+        "file_id": "1qnUz9Y0d61KSfBjnnE_L5X_kmuFlk8nX",
+        "chrono_idx": 62,
+        "release_idx": 56,
+        "split_group": null
+      }
+    ]
+  },
+  {
+    "id": "06",
+    "folder_name": "06 - Tsukimonogatari",
+    "title": "Tsukimonogatari",
+    "episodes": [
+      {
+        "ep": "01",
+        "filename": "Tsukimonogatari - 01.mp4",
+        "path": "06 - Tsukimonogatari/Tsukimonogatari - 01.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1gnMc6d9yFDn_aB0MdsFGHQB8zJSxEuLt",
+        "chrono_idx": 65,
+        "release_idx": 59,
+        "split_group": null
+      },
+      {
+        "ep": "02",
+        "filename": "Tsukimonogatari - 02.mp4",
+        "path": "06 - Tsukimonogatari/Tsukimonogatari - 02.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1GcLeXcxsZv1lqhthnvnxyYWOswTPDGcg",
+        "chrono_idx": 66,
+        "release_idx": 60,
+        "split_group": null
+      },
+      {
+        "ep": "03",
+        "filename": "Tsukimonogatari - 03.mp4",
+        "path": "06 - Tsukimonogatari/Tsukimonogatari - 03.mp4",
+        "duration_min": 25,
+        "status": "not_downloaded",
+        "file_id": "1pP0rdXHPVrWJth8zXLTha54qUH5aG9Mf",
+        "chrono_idx": 67,
+        "release_idx": 61,
+        "split_group": null
+      },
+      {
+        "ep": "04",
+        "filename": "Tsukimonogatari - 04.mp4",
+        "path": "06 - Tsukimonogatari/Tsukimonogatari - 04.mp4",
+        "duration_min": 33,
+        "status": "not_downloaded",
+        "file_id": "1-U23wIDJFBydS3S6NqKm4FXOmFpcyRGm",
+        "chrono_idx": 68,
+        "release_idx": 62,
+        "split_group": null
+      }
+    ]
+  },
+  {
+    "id": "07",
+    "folder_name": "07 - Koyomimonogatari",
+    "title": "Koyomimonogatari",
+    "episodes": [
+      {
+        "ep": "01",
+        "filename": "Koyomimonogatari - 01.mp4",
+        "path": "07 - Koyomimonogatari/Koyomimonogatari - 01.mp4",
+        "duration_min": 13,
+        "status": "not_downloaded",
+        "file_id": "10Gj6KTn-mWxMIW3_a2JoHd4LsJ85m_rc",
+        "chrono_idx": 69,
+        "release_idx": 63,
+        "split_group": null
+      },
+      {
+        "ep": "02",
+        "filename": "Koyomimonogatari - 02.mp4",
+        "path": "07 - Koyomimonogatari/Koyomimonogatari - 02.mp4",
+        "duration_min": 13,
+        "status": "not_downloaded",
+        "file_id": "1gA7T9VB2rY-WmBbQ9D8jJEd4SsQTSM6w",
+        "chrono_idx": 70,
+        "release_idx": 64,
+        "split_group": null
+      },
+      {
+        "ep": "03",
+        "filename": "Koyomimonogatari - 03.mp4",
+        "path": "07 - Koyomimonogatari/Koyomimonogatari - 03.mp4",
+        "duration_min": 11,
+        "status": "not_downloaded",
+        "file_id": "1vob7hMB-Iplo9Iwf1CRcRrYDHEdFqNrj",
+        "chrono_idx": 71,
+        "release_idx": 65,
+        "split_group": null
+      },
+      {
+        "ep": "04",
+        "filename": "Koyomimonogatari - 04.mp4",
+        "path": "07 - Koyomimonogatari/Koyomimonogatari - 04.mp4",
+        "duration_min": 12,
+        "status": "not_downloaded",
+        "file_id": "1Oj68V8jryFeQnHUoZ15REr5rbAxvrjDf",
+        "chrono_idx": 72,
+        "release_idx": 66,
+        "split_group": null
+      },
+      {
+        "ep": "05",
+        "filename": "Koyomimonogatari - 05.mp4",
+        "path": "07 - Koyomimonogatari/Koyomimonogatari - 05.mp4",
+        "duration_min": 10,
+        "status": "not_downloaded",
+        "file_id": "1XsxIwwPup4DeuiXYnD5EzFe6vFXo49ql",
+        "chrono_idx": 73,
+        "release_idx": 67,
+        "split_group": null
+      },
+      {
+        "ep": "06",
+        "filename": "Koyomimonogatari - 06.mp4",
+        "path": "07 - Koyomimonogatari/Koyomimonogatari - 06.mp4",
+        "duration_min": 15,
+        "status": "not_downloaded",
+        "file_id": "1zPiMzrK3dGYK-eM5PQhOCTD8GJ0X1FqF",
+        "chrono_idx": 74,
+        "release_idx": 68,
+        "split_group": null
+      },
+      {
+        "ep": "07",
+        "filename": "Koyomimonogatari - 07.mp4",
+        "path": "07 - Koyomimonogatari/Koyomimonogatari - 07.mp4",
+        "duration_min": 12,
+        "status": "not_downloaded",
+        "file_id": "1pjxhtMDRM-dQmrEc3BlsruYhNDDnhfJT",
+        "chrono_idx": 75,
+        "release_idx": 69,
+        "split_group": null
+      },
+      {
+        "ep": "08",
+        "filename": "Koyomimonogatari - 08.mp4",
+        "path": "07 - Koyomimonogatari/Koyomimonogatari - 08.mp4",
+        "duration_min": 12,
+        "status": "not_downloaded",
+        "file_id": "1jhxZDP3aoscd3rOqk_IAyr75d1SWjVhb",
+        "chrono_idx": 76,
+        "release_idx": 70,
+        "split_group": null
+      },
+      {
+        "ep": "09",
+        "filename": "Koyomimonogatari - 09.mp4",
+        "path": "07 - Koyomimonogatari/Koyomimonogatari - 09.mp4",
+        "duration_min": 12,
+        "status": "not_downloaded",
+        "file_id": "1XSzhe5Z8tEo828kmw-CjOo0I7nq-eAJz",
+        "chrono_idx": 77,
+        "release_idx": 71,
+        "split_group": null
+      },
+      {
+        "ep": "10",
+        "filename": "Koyomimonogatari - 10.mp4",
+        "path": "07 - Koyomimonogatari/Koyomimonogatari - 10.mp4",
+        "duration_min": 13,
+        "status": "not_downloaded",
+        "file_id": "1AijtbcdCBaxYgZ3-rP86Ykrg20tKXWD0",
+        "chrono_idx": 78,
+        "release_idx": 72,
+        "split_group": null
+      },
+      {
+        "ep": "11",
+        "filename": "Koyomimonogatari - 11.mp4",
+        "path": "07 - Koyomimonogatari/Koyomimonogatari - 11.mp4",
+        "duration_min": 11,
+        "status": "not_downloaded",
+        "file_id": "1OVAY2ACxdgH49W3310FEWSCiKlfaYcP4",
+        "chrono_idx": 79,
+        "release_idx": 73,
+        "split_group": null
+      },
+      {
+        "ep": "12",
+        "filename": "Koyomimonogatari - 12.mp4",
+        "path": "07 - Koyomimonogatari/Koyomimonogatari - 12.mp4",
+        "duration_min": 12,
+        "status": "not_downloaded",
+        "file_id": "1XbMCT-jdIEcz2ez6Blz9A5mFIr-D9SYH",
+        "chrono_idx": 80,
+        "release_idx": 74,
+        "split_group": null
+      }
+    ]
+  },
+  {
+    "id": "08",
+    "folder_name": "08 - Owarimonogatari",
+    "title": "Owarimonogatari",
+    "episodes": [
+      {
+        "ep": "01a",
+        "filename": "Owarimonogatari - 01a.mp4",
+        "path": "08 - Owarimonogatari/Owarimonogatari - 01a.mp4",
+        "duration_min": 27,
+        "status": "not_downloaded",
+        "file_id": "1LswoSkKsliQN7Y8XVbGIUpX3qk0UI0SX",
+        "chrono_idx": 81,
+        "release_idx": 75,
+        "split_group": "owari_01"
+      },
+      {
+        "ep": "01b",
+        "filename": "Owarimonogatari - 01b.mp4",
+        "path": "08 - Owarimonogatari/Owarimonogatari - 01b.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1aFl-z9_bOpRlfGaTffNK1w6fGAxtX9yw",
+        "chrono_idx": 82,
+        "release_idx": 76,
+        "split_group": "owari_01"
+      },
+      {
+        "ep": "02",
+        "filename": "Owarimonogatari - 02.mp4",
+        "path": "08 - Owarimonogatari/Owarimonogatari - 02.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1oKr7K2X5G-AuvMlKsIg4fC3KJL38i_hz",
+        "chrono_idx": 83,
+        "release_idx": 77,
+        "split_group": null
+      },
+      {
+        "ep": "03",
+        "filename": "Owarimonogatari - 03.mp4",
+        "path": "08 - Owarimonogatari/Owarimonogatari - 03.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1SGHwESzgFlm5w_OiMxJmm9gJU2V6sV7a",
+        "chrono_idx": 84,
+        "release_idx": 78,
+        "split_group": null
+      },
+      {
+        "ep": "04",
+        "filename": "Owarimonogatari - 04.mp4",
+        "path": "08 - Owarimonogatari/Owarimonogatari - 04.mp4",
+        "duration_min": 25,
+        "status": "not_downloaded",
+        "file_id": "1dCcz-m-Eg-sYTa9mWHIG8_cbU5jAZjul",
+        "chrono_idx": 85,
+        "release_idx": 79,
+        "split_group": null
+      },
+      {
+        "ep": "05",
+        "filename": "Owarimonogatari - 05.mp4",
+        "path": "08 - Owarimonogatari/Owarimonogatari - 05.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1XRZv4Byb9_E6gH-BFdN1QudHlOnW-f0T",
+        "chrono_idx": 86,
+        "release_idx": 80,
+        "split_group": null
+      },
+      {
+        "ep": "06",
+        "filename": "Owarimonogatari - 06.mp4",
+        "path": "08 - Owarimonogatari/Owarimonogatari - 06.mp4",
+        "duration_min": 25,
+        "status": "not_downloaded",
+        "file_id": "1HXoj_WaI5RGv6MwBPh66ymmWj627Q0e_",
+        "chrono_idx": 87,
+        "release_idx": 81,
+        "split_group": null
+      },
+      {
+        "ep": "07",
+        "filename": "Owarimonogatari - 07.mp4",
+        "path": "08 - Owarimonogatari/Owarimonogatari - 07.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1AXEGkrjjsfcolCWJCl1FMT2KoNix39Gl",
+        "chrono_idx": 88,
+        "release_idx": 82,
+        "split_group": null
+      },
+      {
+        "ep": "08",
+        "filename": "Owarimonogatari - 08.mp4",
+        "path": "08 - Owarimonogatari/Owarimonogatari - 08.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1M_sdpno-5YYt4h5WbAqxVfydKdlMy7zE",
+        "chrono_idx": 89,
+        "release_idx": 83,
+        "split_group": null
+      },
+      {
+        "ep": "09",
+        "filename": "Owarimonogatari - 09.mp4",
+        "path": "08 - Owarimonogatari/Owarimonogatari - 09.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1-mDxPinBJSumEh28dnvb0KzJO6nKiK24",
+        "chrono_idx": 90,
+        "release_idx": 84,
+        "split_group": null
+      },
+      {
+        "ep": "10",
+        "filename": "Owarimonogatari - 10.mp4",
+        "path": "08 - Owarimonogatari/Owarimonogatari - 10.mp4",
+        "duration_min": 25,
+        "status": "not_downloaded",
+        "file_id": "16m5kXERWps9iSxPY3c_JIvOV1fouC49G",
+        "chrono_idx": 91,
+        "release_idx": 85,
+        "split_group": null
+      },
+      {
+        "ep": "11",
+        "filename": "Owarimonogatari - 11.mp4",
+        "path": "08 - Owarimonogatari/Owarimonogatari - 11.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1L0WuCFonInaSoI3IZr3wWsE6Mrj5UZu4",
+        "chrono_idx": 92,
+        "release_idx": 86,
+        "split_group": null
+      },
+      {
+        "ep": "12",
+        "filename": "Owarimonogatari - 12.mp4",
+        "path": "08 - Owarimonogatari/Owarimonogatari - 12.mp4",
+        "duration_min": 25,
+        "status": "not_downloaded",
+        "file_id": "1KgW5IizcD8WYxuPzAKPEtw-1ydZNguFP",
+        "chrono_idx": 93,
+        "release_idx": 87,
+        "split_group": null
+      }
+    ]
+  },
+  {
+    "id": "09",
+    "folder_name": "09 - Owarimonogatari 2nd Season",
+    "title": "Owarimonogatari 2nd Season",
+    "episodes": [
+      {
+        "ep": "01",
+        "filename": "Owarimonogatari 2nd Season - 01.mp4",
+        "path": "09 - Owarimonogatari 2nd Season/Owarimonogatari 2nd Season - 01.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1edFowOLJe1Md9SUMQFC8z3j0GiI-ZEON",
+        "chrono_idx": 94,
+        "release_idx": 88,
+        "split_group": null
+      },
+      {
+        "ep": "02",
+        "filename": "Owarimonogatari 2nd Season - 02.mp4",
+        "path": "09 - Owarimonogatari 2nd Season/Owarimonogatari 2nd Season - 02.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1g-GBSJlUFUmcysN0Bi7O6Z0w3Gi_1FfS",
+        "chrono_idx": 95,
+        "release_idx": 89,
+        "split_group": null
+      },
+      {
+        "ep": "03",
+        "filename": "Owarimonogatari 2nd Season - 03.mp4",
+        "path": "09 - Owarimonogatari 2nd Season/Owarimonogatari 2nd Season - 03.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1y_zGB2Xuxxwu0QxOM9n9ULB9V18eYaWT",
+        "chrono_idx": 96,
+        "release_idx": 90,
+        "split_group": null
+      },
+      {
+        "ep": "04",
+        "filename": "Owarimonogatari 2nd Season - 04.mp4",
+        "path": "09 - Owarimonogatari 2nd Season/Owarimonogatari 2nd Season - 04.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1x8qfJ4kQLia5QWUravSkbpUUy-vqTqmc",
+        "chrono_idx": 97,
+        "release_idx": 91,
+        "split_group": null
+      },
+      {
+        "ep": "05",
+        "filename": "Owarimonogatari 2nd Season - 05.mp4",
+        "path": "09 - Owarimonogatari 2nd Season/Owarimonogatari 2nd Season - 05.mp4",
+        "duration_min": 23,
+        "status": "not_downloaded",
+        "file_id": "1SP4a0Qs245eJRkeO-RYlT3NYqIBIW55V",
+        "chrono_idx": 98,
+        "release_idx": 92,
+        "split_group": null
+      },
+      {
+        "ep": "06",
+        "filename": "Owarimonogatari 2nd Season - 06.mp4",
+        "path": "09 - Owarimonogatari 2nd Season/Owarimonogatari 2nd Season - 06.mp4",
+        "duration_min": 23,
+        "status": "not_downloaded",
+        "file_id": "15C-7eLgdTZseX2QY9B6jSmD4soUdKKO1",
+        "chrono_idx": 99,
+        "release_idx": 93,
+        "split_group": null
+      },
+      {
+        "ep": "07",
+        "filename": "Owarimonogatari 2nd Season - 07.mp4",
+        "path": "09 - Owarimonogatari 2nd Season/Owarimonogatari 2nd Season - 07.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1WWdCYY6N-ttWhdQGpE4EuTgbOgW4pRcN",
+        "chrono_idx": 100,
+        "release_idx": 94,
+        "split_group": null
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "folder_name": "10 - Zoku Owarimonogatari",
+    "title": "Zoku Owarimonogatari",
+    "episodes": [
+      {
+        "ep": "01",
+        "filename": "Zoku Owarimonogatari - 01.mp4",
+        "path": "10 - Zoku Owarimonogatari/Zoku Owarimonogatari - 01.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1KrTO09BcTzBmFN_rvaqBTmOf8M2cmyyx",
+        "chrono_idx": 101,
+        "release_idx": 95,
+        "split_group": null
+      },
+      {
+        "ep": "02",
+        "filename": "Zoku Owarimonogatari - 02.mp4",
+        "path": "10 - Zoku Owarimonogatari/Zoku Owarimonogatari - 02.mp4",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "11lxstEm5OZF5tPgk2CthYJ7ep4NGdEdn",
+        "chrono_idx": 102,
+        "release_idx": 96,
+        "split_group": null
+      },
+      {
+        "ep": "03",
+        "filename": "Zoku Owarimonogatari - 03.mp4",
+        "path": "10 - Zoku Owarimonogatari/Zoku Owarimonogatari - 03.mp4",
+        "duration_min": 26,
+        "status": "not_downloaded",
+        "file_id": "1jhmhfktfD0lvMob_v5MRmEPONNpd_Ui2",
+        "chrono_idx": 103,
+        "release_idx": 97,
+        "split_group": null
+      },
+      {
+        "ep": "04",
+        "filename": "Zoku Owarimonogatari - 04.mp4",
+        "path": "10 - Zoku Owarimonogatari/Zoku Owarimonogatari - 04.mp4",
+        "duration_min": 23,
+        "status": "not_downloaded",
+        "file_id": "1867GJuX7AVn1SVwE80FUZtxPEdXVi31P",
+        "chrono_idx": 104,
+        "release_idx": 98,
+        "split_group": null
+      },
+      {
+        "ep": "05",
+        "filename": "Zoku Owarimonogatari - 05.mp4",
+        "path": "10 - Zoku Owarimonogatari/Zoku Owarimonogatari - 05.mp4",
+        "duration_min": 26,
+        "status": "not_downloaded",
+        "file_id": "1TaCALkuRV_9TXFxjolDFYEwgbewDcV9O",
+        "chrono_idx": 105,
+        "release_idx": 99,
+        "split_group": null
+      },
+      {
+        "ep": "06",
+        "filename": "Zoku Owarimonogatari - 06.mp4",
+        "path": "10 - Zoku Owarimonogatari/Zoku Owarimonogatari - 06.mp4",
+        "duration_min": 32,
+        "status": "not_downloaded",
+        "file_id": "1iZ3Mz5xcrAWT2ObfRbCwEWoFzWxxBh1H",
+        "chrono_idx": 106,
+        "release_idx": 100,
+        "split_group": null
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "folder_name": "11 - Off & Monster Season",
+    "title": "Off & Monster Season",
+    "episodes": [
+      {
+        "ep": "01",
+        "filename": "Monogatari Series Off & Monster Season - 01.mkv",
+        "path": "11 - Off & Monster Season/Monogatari Series Off & Monster Season - 01.mkv",
+        "duration_min": 32,
+        "status": "not_downloaded",
+        "file_id": "13EzqW7_OG7bqWX0y0NrsopC1WnWY-Ppn",
+        "chrono_idx": 107,
+        "release_idx": 107,
+        "split_group": null
+      },
+      {
+        "ep": "02",
+        "filename": "Monogatari Series Off & Monster Season - 02.mkv",
+        "path": "11 - Off & Monster Season/Monogatari Series Off & Monster Season - 02.mkv",
+        "duration_min": 23,
+        "status": "not_downloaded",
+        "file_id": "1qUzizE_2-JVzWQr9_Pknyp9_VCjboTds",
+        "chrono_idx": 108,
+        "release_idx": 108,
+        "split_group": null
+      },
+      {
+        "ep": "03",
+        "filename": "Monogatari Series Off & Monster Season - 03.mkv",
+        "path": "11 - Off & Monster Season/Monogatari Series Off & Monster Season - 03.mkv",
+        "duration_min": 23,
+        "status": "not_downloaded",
+        "file_id": "1pY54-RZUN0tsJrdSY6rN0l7AlpoIhMRf",
+        "chrono_idx": 109,
+        "release_idx": 109,
+        "split_group": null
+      },
+      {
+        "ep": "04",
+        "filename": "Monogatari Series Off & Monster Season - 04.mkv",
+        "path": "11 - Off & Monster Season/Monogatari Series Off & Monster Season - 04.mkv",
+        "duration_min": 25,
+        "status": "not_downloaded",
+        "file_id": "1x3w0yx69JAfAoSYw9w0M45zCWC0Ki-Sa",
+        "chrono_idx": 110,
+        "release_idx": 110,
+        "split_group": null
+      },
+      {
+        "ep": "05",
+        "filename": "Monogatari Series Off & Monster Season - 05.mkv",
+        "path": "11 - Off & Monster Season/Monogatari Series Off & Monster Season - 05.mkv",
+        "duration_min": 25,
+        "status": "not_downloaded",
+        "file_id": "1qNq8lYEOgZuftQiKuwJRIpw0VPE9gKxx",
+        "chrono_idx": 111,
+        "release_idx": 111,
+        "split_group": null
+      },
+      {
+        "ep": "06",
+        "filename": "Monogatari Series Off & Monster Season - 06.mkv",
+        "path": "11 - Off & Monster Season/Monogatari Series Off & Monster Season - 06.mkv",
+        "duration_min": 26,
+        "status": "not_downloaded",
+        "file_id": "1l2JhRECZVSk1r-I5B9IHXg-ULswaw52-",
+        "chrono_idx": 112,
+        "release_idx": 112,
+        "split_group": null
+      },
+      {
+        "ep": "07",
+        "filename": "Monogatari Series Off & Monster Season - 07.mkv",
+        "path": "11 - Off & Monster Season/Monogatari Series Off & Monster Season - 07.mkv",
+        "duration_min": 23,
+        "status": "not_downloaded",
+        "file_id": "10DuZMbQ---GJTZaHfNsz8YNE056ffg43",
+        "chrono_idx": 113,
+        "release_idx": 113,
+        "split_group": null
+      },
+      {
+        "ep": "08",
+        "filename": "Monogatari Series Off & Monster Season - 08.mkv",
+        "path": "11 - Off & Monster Season/Monogatari Series Off & Monster Season - 08.mkv",
+        "duration_min": 23,
+        "status": "not_downloaded",
+        "file_id": "158d3Qvc23twJnt6rczZOnpijl5_PrS94",
+        "chrono_idx": 114,
+        "release_idx": 114,
+        "split_group": null
+      },
+      {
+        "ep": "09",
+        "filename": "Monogatari Series Off & Monster Season - 09.mkv",
+        "path": "11 - Off & Monster Season/Monogatari Series Off & Monster Season - 09.mkv",
+        "duration_min": 23,
+        "status": "not_downloaded",
+        "file_id": "1SVQr9aoM-C_f22Y1JBRgoWTPfuy7Zne4",
+        "chrono_idx": 115,
+        "release_idx": 115,
+        "split_group": null
+      },
+      {
+        "ep": "10",
+        "filename": "Monogatari Series Off & Monster Season - 10.mkv",
+        "path": "11 - Off & Monster Season/Monogatari Series Off & Monster Season - 10.mkv",
+        "duration_min": 23,
+        "status": "not_downloaded",
+        "file_id": "19nM98l-KchXyP5b437HlTTiLywkyFgSx",
+        "chrono_idx": 116,
+        "release_idx": 116,
+        "split_group": null
+      },
+      {
+        "ep": "11",
+        "filename": "Monogatari Series Off & Monster Season - 11.mkv",
+        "path": "11 - Off & Monster Season/Monogatari Series Off & Monster Season - 11.mkv",
+        "duration_min": 23,
+        "status": "not_downloaded",
+        "file_id": "15PKOR2YIrKpbQSY2iE0xDgFBM94oXEvV",
+        "chrono_idx": 117,
+        "release_idx": 117,
+        "split_group": null
+      },
+      {
+        "ep": "12",
+        "filename": "Monogatari Series Off & Monster Season - 12.mkv",
+        "path": "11 - Off & Monster Season/Monogatari Series Off & Monster Season - 12.mkv",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "10vOHgX7pi3EGFLEGDithmh28CXzmeKwj",
+        "chrono_idx": 118,
+        "release_idx": 118,
+        "split_group": null
+      },
+      {
+        "ep": "13",
+        "filename": "Monogatari Series Off & Monster Season - 13.mkv",
+        "path": "11 - Off & Monster Season/Monogatari Series Off & Monster Season - 13.mkv",
+        "duration_min": 24,
+        "status": "not_downloaded",
+        "file_id": "1eg0hd_FKy9yqjPx8ebeAGkzEK19S1Gid",
+        "chrono_idx": 119,
+        "release_idx": 119,
+        "split_group": null
+      },
+      {
+        "ep": "14",
+        "filename": "Monogatari Series Off & Monster Season - 14.mkv",
+        "path": "11 - Off & Monster Season/Monogatari Series Off & Monster Season - 14.mkv",
+        "duration_min": 26,
+        "status": "not_downloaded",
+        "file_id": "1tLiRqdAM_Tw06w81mLGYsI_gEi2TB6gX",
+        "chrono_idx": 120,
+        "release_idx": 120,
+        "split_group": null
+      }
+    ]
+  }
+]
