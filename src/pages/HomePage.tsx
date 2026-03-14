@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import type { Series, StatusMap, WatchOrder } from '../types';
 import { SERIES_META, WATCH_ORDER_TV, WATCH_ORDER_CHRONOLOGICAL } from '../data/metadata';
 import { getSeriesProgress } from '../hooks/useStore';
@@ -73,9 +74,9 @@ export default function HomePage({ library, statusMap, order, searchQuery }: Pro
               // Find next episode to watch
               const nextEp = s.episodes.find(e => statusMap[s.id]?.[e.ep] !== 'watched');
               return (
-                <a
+                <Link
                   key={s.id}
-                  href={`/detail/${s.id}`}
+                  to={`/detail/${s.id}`}
                   className="flex-shrink-0 w-[320px] bg-bg-card rounded-md overflow-hidden hover:scale-[1.03] hover:shadow-[0_4px_20px_rgba(0,0,0,0.5)] transition-all group"
                 >
                   <div className="relative aspect-video overflow-hidden">
@@ -92,7 +93,7 @@ export default function HomePage({ library, statusMap, order, searchQuery }: Pro
                       {nextEp ? `Ep ${nextEp.ep} · ${nextEp.duration_min}m` : `${progress.watched}/${progress.total} watched`}
                     </p>
                   </div>
-                </a>
+                </Link>
               );
             })}
           </div>

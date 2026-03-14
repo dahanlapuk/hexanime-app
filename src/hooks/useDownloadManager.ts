@@ -1,12 +1,10 @@
 /**
- * useDownloadManager v1.3 — Native Streaming Download Engine
+ * useDownloadManager v1.3.1 — Native Streaming Download Engine
  *
- * ── CHANGELOG from v1.2b ──
- * ✅ TASK 1: Replaced fetch+blob+base64 with Filesystem.downloadFile() (no OOM)
- * ✅ TASK 2: Fixed stale closure — queue lives in useRef, auto-start via useEffect
- * ✅ TASK 3: Modern Android permissions — READ_MEDIA_VIDEO (API 33+)
- * ✅ TASK 4: Integrity audit checks file size > 1MB, deletes corrupted files
- * ✅ TASK 5: Blocks download if API key missing, logs every stage
+ * ── CHANGELOG from v1.3 ──
+ * ✅ FIX 1: Pre-download mkdir to prevent immediate error on fresh install
+ * ✅ FIX 2: HTTP status validation after downloadFile (detect saved HTML error pages)
+ * ✅ FIX 3: resumeTicket counter forces useEffect re-fire on resume
  */
 
 import { useState, useCallback, useRef, useEffect } from 'react';
@@ -19,8 +17,8 @@ const isCapacitor = !!(
 );
 
 const LIBRARY_DIR = 'HexanimeLibrary';
-const APP_VERSION = '1.3';
-const MIN_VALID_FILE_SIZE = 1 * 1024 * 1024; // 1MB — anything smaller is corrupted
+const APP_VERSION = '1.3.1';
+const MIN_VALID_FILE_SIZE = 1 * 1024 * 1024; // 1MB
 
 // ── GDrive API v3 URL ──
 function getGDriveUrl(fileId: string): string {
@@ -28,7 +26,7 @@ function getGDriveUrl(fileId: string): string {
   return `https://www.googleapis.com/drive/v3/files/${fileId}?alt=media&key=${apiKey}`;
 }
 
-// ── API Key Guard (TASK 5) ──
+// ── API Key Guard ──
 function assertApiKey(): boolean {
   const key = import.meta.env.VITE_GDRIVE_API_KEY;
   if (!key) {
@@ -39,19 +37,16 @@ function assertApiKey(): boolean {
   return true;
 }
 
-// ── Permission Request (TASK 3) ──
+// ── Permission Request ──
 async function requestStoragePermission(): Promise<boolean> {
   if (!isCapacitor) return true;
 
   try {
     const { Filesystem } = await import('@capacitor/filesystem');
-
     console.log('[Perm] Requesting storage permissions...');
     const result = await Filesystem.requestPermissions();
     console.log('[Perm] Result:', JSON.stringify(result));
 
-    // Capacitor FS returns { publicStorage: 'granted' | 'denied' | 'prompt' }
-    // On Android 13+ this maps to READ_MEDIA_VIDEO internally
     if (result.publicStorage === 'granted') {
       console.log('[Perm] ✅ Granted');
       return true;
@@ -66,12 +61,33 @@ async function requestStoragePermission(): Promise<boolean> {
   }
 }
 
+// ── FIX 1: Ensure download directory exists ──
+async function ensureDirectory(subPath?: string): Promise<void> {
+  if (!isCapacitor) return;
+  try {
+    const { Filesystem, Directory } = await import('@capacitor/filesystem');
+    const dirPath = subPath ? `${LIBRARY_DIR}/${subPath}` : LIBRARY_DIR;
+    await Filesystem.mkdir({
+      path: dirPath,
+      directory: Directory.Documents,
+      recursive: true,
+    });
+    console.log(`[DL] 📁 Directory ensured: Documents/${dirPath}`);
+  } catch (err) {
+    // mkdir throws if directory already exists — that's fine
+    const msg = err instanceof Error ? err.message : String(err);
+    if (!msg.includes('exists') && !msg.includes('EEXIST')) {
+      console.warn(`[DL] mkdir warning: ${msg}`);
+    }
+  }
+}
+
 interface UseDownloadManagerProps {
   setStatus: (seriesId: string, ep: string, status: EpisodeStatus) => void;
 }
 
 export function useDownloadManager({ setStatus }: UseDownloadManagerProps) {
-  // ── TASK 2: Queue in useRef to avoid stale closures ──
+  // Queue in useRef to avoid stale closures
   const [queueState, setQueueState] = useState<DownloadQueueItem[]>([]);
   const queueRef = useRef<DownloadQueueItem[]>([]);
   const [isDownloading, setIsDownloading] = useState(false);
@@ -80,7 +96,10 @@ export function useDownloadManager({ setStatus }: UseDownloadManagerProps) {
   const isPausedRef = useRef(false);
   const [permissionError, setPermissionError] = useState(false);
 
-  // Keep refs in sync with state
+  // FIX 3: Resume ticket — incrementing this forces useEffect to re-fire
+  const [resumeTicket, setResumeTicket] = useState(0);
+
+  // Sync ref with state
   const updateQueue = useCallback((updater: (prev: DownloadQueueItem[]) => DownloadQueueItem[]) => {
     setQueueState(prev => {
       const next = updater(prev);
@@ -126,13 +145,11 @@ export function useDownloadManager({ setStatus }: UseDownloadManagerProps) {
     updateQueue(prev => prev.filter(i => i.status !== 'done'));
   }, [updateQueue]);
 
-  // ── Process single download item ──
+  // ── Process single item ──
   const processItem = useCallback(async (item: DownloadQueueItem) => {
     const { seriesId, ep, file_id, path } = item;
-
     console.log(`[DL] ▶ Start: ${path}`);
 
-    // Mark downloading
     updateQueue(prev => prev.map(i =>
       i.seriesId === seriesId && i.ep === ep
         ? { ...i, status: 'downloading' as const, progress: 0 }
@@ -142,16 +159,48 @@ export function useDownloadManager({ setStatus }: UseDownloadManagerProps) {
 
     try {
       if (isCapacitor) {
-        // ══════════════════════════════════════════════
-        // TASK 1: Native streaming download via downloadFile()
-        // NO blob, NO base64, NO memory overflow
-        // ══════════════════════════════════════════════
         const { Filesystem, Directory } = await import('@capacitor/filesystem');
+
+        // ── FIX 1: Ensure parent directory exists before download ──
+        const parentDir = path.includes('/') ? path.substring(0, path.lastIndexOf('/')) : undefined;
+        await ensureDirectory(parentDir);
 
         const url = getGDriveUrl(file_id);
         console.log(`[DL] ⬇ URL: ${url.slice(0, 90)}...`);
-        console.log(`[DL]   Path: Documents/${LIBRARY_DIR}/${path}`);
+        console.log(`[DL]   Dest: Documents/${LIBRARY_DIR}/${path}`);
 
+        // ── FIX 2: Pre-flight HTTP check before streaming ──
+        // Quick HEAD request to validate the file_id & API key
+        try {
+          const headResp = await fetch(url, { method: 'HEAD' });
+          if (!headResp.ok) {
+            const status = headResp.status;
+            if (status === 403) {
+              throw new Error(`API Error (403 Forbidden): Check API key & file sharing. file_id=${file_id}`);
+            } else if (status === 404) {
+              throw new Error(`API Error (404 Not Found): Invalid file_id=${file_id}`);
+            } else if (status === 401) {
+              throw new Error(`API Error (401 Unauthorized): API key expired or invalid`);
+            } else {
+              throw new Error(`API Error (HTTP ${status}): ${headResp.statusText}`);
+            }
+          }
+          const contentType = headResp.headers.get('content-type') || '';
+          if (contentType.includes('text/html')) {
+            throw new Error(`API Error: GDrive returned HTML (virus scan page). file_id=${file_id}`);
+          }
+          const contentLength = Number(headResp.headers.get('content-length') || 0);
+          console.log(`[DL] ✓ HEAD OK | ${(contentLength / 1024 / 1024).toFixed(1)}MB | ${contentType}`);
+        } catch (headErr) {
+          // If it's our own thrown error, re-throw
+          if (headErr instanceof Error && headErr.message.startsWith('API Error')) {
+            throw headErr;
+          }
+          // Network error on HEAD — try download anyway (some servers block HEAD)
+          console.warn('[DL] HEAD request failed, trying download anyway:', headErr);
+        }
+
+        // ── Native streaming download ──
         const result = await Filesystem.downloadFile({
           url,
           path: `${LIBRARY_DIR}/${path}`,
@@ -162,25 +211,23 @@ export function useDownloadManager({ setStatus }: UseDownloadManagerProps) {
 
         console.log(`[DL] 📁 Downloaded to: ${result.path}`);
 
-        // Verify the file was written and has valid size
+        // ── Post-download integrity check ──
         const stat = await Filesystem.stat({
           path: `${LIBRARY_DIR}/${path}`,
           directory: Directory.Documents,
         });
 
         if (stat.size < MIN_VALID_FILE_SIZE) {
-          // Corrupted — likely a GDrive HTML error page saved as .mp4
-          console.error(`[DL] ❌ File too small (${stat.size} bytes). Likely corrupted.`);
+          console.error(`[DL] ❌ File too small (${stat.size} bytes). Likely corrupted/error page.`);
           await Filesystem.deleteFile({
             path: `${LIBRARY_DIR}/${path}`,
             directory: Directory.Documents,
           });
-          throw new Error(`Downloaded file is only ${stat.size} bytes — corrupted (expected >1MB)`);
+          throw new Error(`Download corrupted: only ${stat.size} bytes (expected >1MB). Possible GDrive error page saved.`);
         }
 
         console.log(`[DL] ✓ Verified: ${(stat.size / 1024 / 1024).toFixed(1)}MB`);
 
-        // Mark 100%
         updateQueue(prev => prev.map(i =>
           i.seriesId === seriesId && i.ep === ep
             ? { ...i, progress: 100, status: 'done' as const }
@@ -190,9 +237,7 @@ export function useDownloadManager({ setStatus }: UseDownloadManagerProps) {
         console.log(`[DL] ✅ Complete: ${path}`);
 
       } else {
-        // ══════════════════════════════════════════════
-        // BROWSER MODE: Simulated download with progress
-        // ══════════════════════════════════════════════
+        // ── BROWSER MODE ──
         const totalSteps = 20;
         for (let step = 0; step <= totalSteps; step++) {
           if (isPausedRef.current) break;
@@ -209,7 +254,7 @@ export function useDownloadManager({ setStatus }: UseDownloadManagerProps) {
             : i
         ));
         setStatus(seriesId, ep, 'downloaded');
-        console.log(`[DL] ✅ Complete (browser sim): ${path}`);
+        console.log(`[DL] ✅ Complete (sim): ${path}`);
       }
 
     } catch (err) {
@@ -224,14 +269,11 @@ export function useDownloadManager({ setStatus }: UseDownloadManagerProps) {
     }
   }, [setStatus, updateQueue]);
 
-  // ── Process queue (reads from ref, not state) ──
+  // ── Process queue ──
   const processQueue = useCallback(async () => {
     if (isDownloadingRef.current) return;
-
-    // TASK 5: Guard
     if (!assertApiKey()) return;
 
-    // TASK 3: Permissions
     if (isCapacitor) {
       const granted = await requestStoragePermission();
       if (!granted) {
@@ -239,19 +281,21 @@ export function useDownloadManager({ setStatus }: UseDownloadManagerProps) {
         return;
       }
       setPermissionError(false);
+
+      // FIX 1: Create base directory on first run
+      await ensureDirectory();
     }
 
     isDownloadingRef.current = true;
     setIsDownloading(true);
     console.log(`[DL] 🚀 Queue processor started (v${APP_VERSION})`);
 
-    // Set up progress listener for Capacitor
+    // Progress listener
     let removeListener: (() => void) | null = null;
     if (isCapacitor) {
       try {
         const { Filesystem } = await import('@capacitor/filesystem');
         const handle = await Filesystem.addListener('progress', (progress) => {
-          // Find which item is currently downloading
           const current = queueRef.current.find(i => i.status === 'downloading');
           if (current && progress.contentLength > 0) {
             const percent = Math.round((progress.bytes / progress.contentLength) * 100);
@@ -269,7 +313,6 @@ export function useDownloadManager({ setStatus }: UseDownloadManagerProps) {
     }
 
     try {
-      // Process items one by one, always reading latest from ref
       while (true) {
         if (isPausedRef.current) {
           console.log('[DL] ⏸ Paused');
@@ -292,13 +335,13 @@ export function useDownloadManager({ setStatus }: UseDownloadManagerProps) {
     }
   }, [processItem, updateQueue]);
 
-  // ── TASK 2: Auto-start when pending items appear ──
+  // ── Auto-start: fires when pending items appear OR resumeTicket changes ──
   useEffect(() => {
     const hasPending = queueState.some(i => i.status === 'pending');
     if (hasPending && !isDownloadingRef.current && !isPausedRef.current) {
       processQueue();
     }
-  }, [queueState, processQueue]);
+  }, [queueState, processQueue, resumeTicket]);
 
   // ── Pause ──
   const pauseAll = useCallback(() => {
@@ -307,15 +350,15 @@ export function useDownloadManager({ setStatus }: UseDownloadManagerProps) {
     console.log('[DL] ⏸ Pause requested');
   }, []);
 
-  // ── Resume ──
+  // ── FIX 3: Resume — increment ticket to force useEffect re-fire ──
   const resumeAll = useCallback(() => {
     isPausedRef.current = false;
     setIsPaused(false);
+    setResumeTicket(t => t + 1);
     console.log('[DL] ▶ Resume requested');
-    // processQueue will be triggered by useEffect above
   }, []);
 
-  // ── TASK 4: Storage Audit ──
+  // ── Storage Audit ──
   const checkStorage = useCallback(async (
     library: { id: string; episodes: Episode[] }[],
     getStatus: (sid: string, ep: string) => EpisodeStatus,
@@ -344,7 +387,6 @@ export function useDownloadManager({ setStatus }: UseDownloadManagerProps) {
               });
 
               if (stat.size < MIN_VALID_FILE_SIZE) {
-                // File exists but is too small — corrupted GDrive error page
                 console.warn(`[Audit] ⚠️ Corrupted (${stat.size}B < 1MB): ${ep.path}`);
                 await Filesystem.deleteFile({
                   path: `${LIBRARY_DIR}/${ep.path}`,
@@ -357,7 +399,6 @@ export function useDownloadManager({ setStatus }: UseDownloadManagerProps) {
                 verified++;
               }
             } catch {
-              // File missing
               setStatus(series.id, ep.ep, 'not_downloaded');
               reset++;
               console.warn(`[Audit] ❌ Missing: ${ep.path}`);
