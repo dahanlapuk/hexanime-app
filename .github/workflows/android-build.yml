@@ -44,6 +44,9 @@ jobs:
           # Sinkronisasi build Vite ke proyek Android
           npx @capacitor/cli sync android
 
+      - name: Patch Android Permissions
+        run: bash scripts/patch-android-manifest.sh
+
       - name: Build Android APK (Gradle)
         run: |
           cd android

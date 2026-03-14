@@ -2,5 +2,14 @@
   "appId": "com.hexadev.hexanime",
   "appName": "Hexanime",
   "webDir": "dist",
-  "bundledWebRuntime": false
+  "bundledWebRuntime": false,
+  "server": {
+    "allowNavigation": [
+      "www.googleapis.com",
+      "drive.google.com"
+    ]
+  },
+  "android": {
+    "allowMixedContent": true
+  }
 }
