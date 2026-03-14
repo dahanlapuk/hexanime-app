@@ -55,7 +55,7 @@ export default function DetailPage({ library, statusMap, order: _order, getStatu
   const seriesQueueItems = downloadManager.queue.filter(i => i.seriesId === series.id);
   const hasQueueItems = seriesQueueItems.length > 0;
 
-  // Handle batch download — enqueues then starts
+  // Handle batch download — enqueue triggers auto-start via useEffect in hook
   const handleBatchDownload = () => {
     const notDownloaded = series.episodes.filter(ep => {
       const st = getStatus(series.id, ep.ep);
@@ -64,8 +64,6 @@ export default function DetailPage({ library, statusMap, order: _order, getStatu
     if (notDownloaded.length > 0) {
       downloadManager.enqueue(series.id, notDownloaded);
       setQueueOpen(true);
-      // Start download after a tick
-      setTimeout(() => downloadManager.startDownload(), 100);
     }
   };
 
@@ -75,7 +73,6 @@ export default function DetailPage({ library, statusMap, order: _order, getStatu
     if (ep && ep.file_id) {
       downloadManager.enqueue(series.id, [ep]);
       setQueueOpen(true);
-      setTimeout(() => downloadManager.startDownload(), 100);
     }
   };
 
