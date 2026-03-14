@@ -1,0 +1,6 @@
+{
+  "appId": "com.hexadev.hexanime",
+  "appName": "Hexanime",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
