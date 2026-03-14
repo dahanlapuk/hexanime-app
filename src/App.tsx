@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useLibrary, useStatusMap, useTimeMap, useWatchOrder } from './hooks/useStore';
 import { useDownloadManager } from './hooks/useDownloadManager';
@@ -7,6 +7,8 @@ import HomePage from './pages/HomePage';
 import DetailPage from './pages/DetailPage';
 import PlayerPage from './pages/PlayerPage';
 import DebugConsole from './components/DebugConsole';
+import StartupGuard from './components/StartupGuard';
+import ChangelogModal from './components/ChangelogModal';
 
 export default function App() {
   const { library, loading } = useLibrary();
@@ -14,21 +16,9 @@ export default function App() {
   const { getTime, saveTime } = useTimeMap();
   const { order, setOrder } = useWatchOrder();
   const [searchQuery, setSearchQuery] = useState('');
-  const [auditDone, setAuditDone] = useState(false);
-
   const downloadManager = useDownloadManager({ setStatus });
-
-  // ── Startup Audit ──
-  // Verify that files marked "downloaded" / "watched" still exist on device storage.
-  // If user deleted them via File Manager, reset status to "not_downloaded".
-  useEffect(() => {
-    if (!loading && library.length > 0 && !auditDone) {
-      downloadManager.checkStorage(library, getStatus).then(() => {
-        setAuditDone(true);
-        console.log('[HexAnime] Startup audit complete');
-      });
-    }
-  }, [loading, library, auditDone, downloadManager, getStatus]);
+  const [startupComplete, setStartupComplete] = useState(false);
+  const [showChangelog, setShowChangelog] = useState(!localStorage.getItem('hexanime_v16_seen'));
 
   if (loading) {
     return (
@@ -42,9 +32,29 @@ export default function App() {
     );
   }
 
+  if (!startupComplete) {
+    return (
+      <>
+        <DebugConsole />
+        <StartupGuard 
+          library={library} 
+          getStatus={getStatus} 
+          setStatus={setStatus} 
+          onComplete={() => setStartupComplete(true)} 
+        />
+      </>
+    );
+  }
+
   return (
     <BrowserRouter>
       <DebugConsole />
+      {showChangelog && (
+        <ChangelogModal onClose={() => {
+          setShowChangelog(false);
+          localStorage.setItem('hexanime_v16_seen', 'true');
+        }} />
+      )}
       <Routes>
         <Route path="/player/:seriesId/:ep" element={
           <PlayerPage

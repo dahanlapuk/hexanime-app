@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Clipboard } from '@capacitor/clipboard';
 
 interface LogEntry {
   id: string;
@@ -40,9 +41,25 @@ export default function DebugConsole() {
             <span className="text-[0.65rem] font-bold uppercase tracking-wider opacity-80">
               Hexadev System Log
             </span>
-            <span className="text-[0.6rem] font-mono opacity-80">
-              {log.timestamp.toLocaleTimeString()}
-            </span>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.6rem] font-mono opacity-80">
+                {log.timestamp.toLocaleTimeString()}
+              </span>
+              <button 
+                onClick={async () => {
+                  const text = logs.map(l => `[${l.timestamp.toLocaleTimeString()}] TYPE: ${l.message}`).join('\n');
+                  try {
+                    await Clipboard.write({ string: text });
+                    alert('Logs copied to clipboard!');
+                  } catch (e) {
+                    console.error('Failed to copy logs', e);
+                  }
+                }}
+                className="text-[0.6rem] bg-white/20 hover:bg-white/30 px-2 py-0.5 rounded font-mono"
+              >
+                Copy
+              </button>
+            </div>
           </div>
           <p className="font-mono text-xs whitespace-pre-wrap leading-relaxed">
             {log.message}

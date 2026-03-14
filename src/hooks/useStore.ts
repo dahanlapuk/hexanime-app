@@ -1,6 +1,14 @@
 import { useState, useEffect, useCallback } from 'react';
 import type { Series, StatusMap, TimeMap, EpisodeStatus, WatchOrder } from '../types';
 
+const isCapacitor = !!(
+  typeof window !== 'undefined' &&
+  (window as unknown as Record<string, unknown>).Capacitor
+);
+
+const LIBRARY_DIR = 'HexanimeLibrary';
+const MIN_VALID_FILE_SIZE = 1 * 1024 * 1024; // 1MB
+
 const STORAGE_KEYS = {
   status: 'hexanime_status',
   time: 'hexanime_time',
@@ -108,4 +116,64 @@ export function getSeriesProgress(seriesId: string, episodes: { ep: string }[], 
   const watched = episodes.filter(e => statusMap[seriesId]?.[e.ep] === 'watched').length;
   const downloaded = episodes.filter(e => ['downloaded', 'watched'].includes(statusMap[seriesId]?.[e.ep] || '')).length;
   return { watched, downloaded, total: episodes.length, percent: episodes.length ? Math.round((watched / episodes.length) * 100) : 0 };
+}
+
+// Global Storage Verification
+export async function verifyStorage(
+  library: Series[],
+  getStatus: (sid: string, ep: string) => EpisodeStatus,
+  setStatus: (sid: string, ep: string, status: EpisodeStatus) => void
+) {
+  if (!isCapacitor) {
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('hexadev-log', { detail: 'Browser mode: Skipping verifyStorage' }));
+    }
+    return;
+  }
+
+  try {
+    const { Filesystem, Directory } = await import('@capacitor/filesystem');
+    let verified = 0;
+    let corrupted = 0;
+
+    for (const series of library) {
+      for (const ep of series.episodes) {
+        const status = getStatus(series.id, ep.ep);
+        if (status === 'downloaded' || status === 'watched') {
+          try {
+            const stat = await Filesystem.stat({
+              path: `${LIBRARY_DIR}/${ep.path}`,
+              directory: Directory.Data,
+            });
+
+            if (stat.size < MIN_VALID_FILE_SIZE) {
+              window.dispatchEvent(new CustomEvent('hexadev-log', { 
+                detail: `Corrupted file detected: ${ep.path} (${stat.size} bytes). Deleting.` 
+              }));
+              await Filesystem.deleteFile({
+                path: `${LIBRARY_DIR}/${ep.path}`,
+                directory: Directory.Data,
+              });
+              setStatus(series.id, ep.ep, 'not_downloaded');
+              corrupted++;
+            } else {
+              verified++;
+            }
+          } catch (e) {
+            setStatus(series.id, ep.ep, 'not_downloaded');
+            corrupted++;
+          }
+        }
+      }
+    }
+    
+    if (corrupted > 0) {
+      window.dispatchEvent(new CustomEvent('hexadev-log', { 
+        detail: `verifyStorage complete: ${verified} OK, ${corrupted} corrupted/missing items reset.` 
+      }));
+    }
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    window.dispatchEvent(new CustomEvent('hexadev-log', { detail: `verifyStorage Failed: ${msg}` }));
+  }
 }

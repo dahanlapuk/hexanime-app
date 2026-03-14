@@ -82,7 +82,7 @@ async function ensureDirectory(subPath?: string): Promise<void> {
     const dirPath = subPath ? `${LIBRARY_DIR}/${subPath}` : LIBRARY_DIR;
     await Filesystem.mkdir({
       path: dirPath,
-      directory: Directory.Documents,
+      directory: Directory.Data,
       recursive: true,
     });
     console.log(`[DL] 📁 Directory ensured: Documents/${dirPath}`);
@@ -217,7 +217,7 @@ export function useDownloadManager({ setStatus }: UseDownloadManagerProps) {
         const result = await Filesystem.downloadFile({
           url,
           path: `${LIBRARY_DIR}/${path}`,
-          directory: Directory.Documents,
+          directory: Directory.Data,
           recursive: true,
           progress: true,
         });
@@ -227,14 +227,14 @@ export function useDownloadManager({ setStatus }: UseDownloadManagerProps) {
         // ── Post-download integrity check ──
         const stat = await Filesystem.stat({
           path: `${LIBRARY_DIR}/${path}`,
-          directory: Directory.Documents,
+          directory: Directory.Data,
         });
 
         if (stat.size < MIN_VALID_FILE_SIZE) {
           console.error(`[DL] ❌ File too small (${stat.size} bytes). Likely corrupted/error page.`);
           await Filesystem.deleteFile({
             path: `${LIBRARY_DIR}/${path}`,
-            directory: Directory.Documents,
+            directory: Directory.Data,
           });
           throw new Error(`Download corrupted: only ${stat.size} bytes (expected >1MB). Possible GDrive error page saved.`);
         }
@@ -398,14 +398,14 @@ export function useDownloadManager({ setStatus }: UseDownloadManagerProps) {
             try {
               const stat = await Filesystem.stat({
                 path: `${LIBRARY_DIR}/${ep.path}`,
-                directory: Directory.Documents,
+                directory: Directory.Data,
               });
 
               if (stat.size < MIN_VALID_FILE_SIZE) {
                 console.warn(`[Audit] ⚠️ Corrupted (${stat.size}B < 1MB): ${ep.path}`);
                 await Filesystem.deleteFile({
                   path: `${LIBRARY_DIR}/${ep.path}`,
-                  directory: Directory.Documents,
+                  directory: Directory.Data,
                 });
                 setStatus(series.id, ep.ep, 'not_downloaded');
                 deleted++;

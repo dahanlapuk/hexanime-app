@@ -22,7 +22,7 @@ export default function Navbar({ order, onOrderChange, searchQuery, onSearchChan
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 flex items-center px-[4%] h-[68px] transition-all duration-400 ${scrolled ? 'bg-[#0f0f0fF8] shadow-[0_2px_20px_rgba(0,0,0,0.5)]' : 'bg-transparent'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 flex items-center px-[4%] h-[68px] transition-all duration-400 ${scrolled ? 'bg-black/60 backdrop-blur-[12px] shadow-[0_2px_20px_rgba(0,0,0,0.5)] border-b border-[#333]' : 'bg-transparent backdrop-blur-[2px]'}`}>
       {/* Logo */}
       <Link to="/" className="font-display text-[2rem] tracking-[2px] text-accent uppercase mr-8 hover:opacity-90 transition-opacity">
         HEX<span className="text-text-primary">ANIME</span>

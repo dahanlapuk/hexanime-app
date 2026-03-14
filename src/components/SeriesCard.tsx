@@ -24,11 +24,11 @@ export default function SeriesCard({ series, statusMap, index }: Props) {
       {/* Cover gradient */}
       <div className="w-full aspect-[2/3] relative overflow-hidden">
         <div
-          className="w-full h-full flex flex-col items-center justify-center p-4 text-center"
+          className="w-full h-full flex flex-col items-center justify-center p-4 text-center backdrop-blur-sm"
           style={{ background: `linear-gradient(145deg, ${g1}, ${g2})` }}
         >
-          <span className="text-3xl font-light opacity-40 mb-2">{meta?.kanji}</span>
-          <span className="font-display text-xl tracking-wider leading-tight">{series.title}</span>
+          <span className="text-4xl font-light opacity-30 mb-2">{meta?.kanji}</span>
+          <span className="font-display text-4xl font-bold tracking-wider leading-snug drop-shadow-lg text-white">{series.title}</span>
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent" />
       </div>
@@ -47,7 +47,7 @@ export default function SeriesCard({ series, statusMap, index }: Props) {
       </div>
 
       {/* Hover overlay */}
-      <div className="absolute inset-0 bg-black/85 flex flex-col items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 text-center">
+      <div className="absolute inset-0 bg-black/70 backdrop-blur-[12px] flex flex-col items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 text-center">
         <button className="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center text-lg hover:bg-white hover:text-black transition-all">
           ▶
         </button>

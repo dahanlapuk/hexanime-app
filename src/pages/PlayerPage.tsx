@@ -67,11 +67,20 @@ export default function PlayerPage({ library, getStatus: _getStatus, setStatus, 
   // ── Load video source ──
   useEffect(() => {
     if (currentEp) {
+      const status = _getStatus(seriesId!, ep!);
+      if (status !== 'downloaded' && status !== 'watched') {
+        window.dispatchEvent(new CustomEvent('hexadev-log', {
+          detail: `Playback Guard: Blocked attempt to play non-downloaded episode ${ep} (status: ${status})`
+        }));
+        setVideoSrc('');
+        return;
+      }
+
       getPlaybackUrl(currentEp).then(url => {
         setVideoSrc(url);
       });
     }
-  }, [currentEp, getPlaybackUrl]);
+  }, [currentEp, getPlaybackUrl, _getStatus, seriesId, ep]);
 
   // ── Overlay auto-hide ──
   const handleMouseMove = useCallback(() => {
@@ -198,10 +207,19 @@ export default function PlayerPage({ library, getStatus: _getStatus, setStatus, 
             <span className="text-7xl opacity-15 font-display block mb-4">{meta?.kanji}</span>
             <p className="text-text-secondary text-lg font-semibold">{currentEp.filename}</p>
             <p className="text-text-muted mt-2 text-sm">📁 {currentEp.path}</p>
-            {isSplitChain && (
-              <p className="text-queued mt-3 text-xs font-medium">⚡ Split chain → otomatis ke {nextEp?.ep}</p>
+            
+            {_getStatus(seriesId!, ep!) !== 'downloaded' && _getStatus(seriesId!, ep!) !== 'watched' ? (
+              <p className="text-red-400 mt-4 text-sm font-bold bg-red-900/30 inline-block px-3 py-1 rounded">
+                Episode belum diunduh atau file korup.
+              </p>
+            ) : (
+              <>
+                {isSplitChain && (
+                  <p className="text-queued mt-3 text-xs font-medium">⚡ Split chain → otomatis ke {nextEp?.ep}</p>
+                )}
+                <p className="text-text-muted mt-4 text-xs">(Klik untuk simulasi selesai → auto-next)</p>
+              </>
             )}
-            <p className="text-text-muted mt-4 text-xs">(Klik untuk simulasi selesai → auto-next)</p>
           </div>
         </div>
       )}
